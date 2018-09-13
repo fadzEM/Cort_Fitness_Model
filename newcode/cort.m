@@ -1,7 +1,8 @@
+% The cort vs EC function
 function Y = cort(beta, K,n,x)
-% cort as a function of environmental challenges.
+c_0 = 0.05;
 x = 10*x;
-y = 0.05.*(x<=1) + (0.05+(beta .* x.^n)./(K^n+x.^n)).*(1<x) ;
+y = c_0.*(x<=1) + (c_0+(beta .* x.^n)./(K^n+x.^n)).*(1<x) ;
 Y = y;
 for i = 1:length(Y)
     if (Y(i) > 1)
